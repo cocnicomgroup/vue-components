@@ -20,11 +20,15 @@
         <click-counter></click-counter>
     </div>
 
+    <script type="text/x-template" id="click-counter-template">
+        <button @click="count++">{{ count }}</button>
+    </script>
+
     <script src="js/vue.js"></script>
 
     <script>
         Vue.component('click-counter', {
-            template: '<button @click="count++">{{ count }}</button>',
+            template: '#click-counter-template',
             data() {
                 return {
                     count: 0
