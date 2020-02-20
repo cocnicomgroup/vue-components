@@ -45,8 +45,7 @@ that returns an object.
 
 - Now the component can be used as a regular Html element as above.
 - Since components are re-usable, we can create multiple components as above.
+- All are new instances of the component and are separate from each other.
 
-Defining component templates
-- The x-template method
 
 
