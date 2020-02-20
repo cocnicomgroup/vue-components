@@ -1,0 +1,52 @@
+Components Basics
+- Components are re-usable vue instances with a name.
+-Their ppurpose is to encapsulate some functionality of our application.
+-They can be buttons, navigation bars custom texts etc.
+
+Creating Components
+-Vue components are created with the function 
+ 
+  -> Vue.component()
+
+    -It accepts two parameters
+        - The name of the component
+        - The option object (this is the same as the options of the vue instance)
+        - The el option are absent, this is because components are supposed to be 
+          re-usable and hence do not have to mount an html element
+    
+
+Eg. 
+<body>
+    <div id="app" class="container">
+        <click-counter></click-counter>
+        <click-counter></click-counter>
+        <click-counter></click-counter>
+    </div>
+
+    <script src="js/vue.js"></script>
+
+    <script>
+        Vue.component('click-counter', {
+            template: '<button @click="count++">{{ count }}</button>',
+            data() {
+                return {
+                    count: 0
+                }
+            }
+        })
+        new Vue({
+            el: "#app"
+        });
+    </script>
+</body>
+
+NB. The data option in a component cannot be an object but always a function 
+that returns an object.
+
+- Now the component can be used as a regular Html element as above.
+- Since components are re-usable, we can create multiple components as above.
+
+Defining component templates
+- The x-template method
+
+
